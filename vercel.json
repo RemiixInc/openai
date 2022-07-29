@@ -1,7 +1,4 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/api" }
-  ],
   "headers": [
     {
       "source": "/api/(.*)",
