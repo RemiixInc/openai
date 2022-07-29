@@ -1,7 +1,7 @@
 {
   "name": "open-ai",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate stories, essays and more with the power of AI.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
