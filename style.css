@@ -1,0 +1,388 @@
+html,
+body,
+#form {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: "Biotif", sans-serif;
+  line-height: 1.4;
+}
+
+#form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+textarea {
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  resize: none;
+  padding: 16px;
+  flex: 45%;
+  height: 100%;
+  border-radius: 0px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+textarea:nth-child(1) {
+  border-width: 2px 1px 2px 2px !important;
+}
+
+textarea:nth-child(2) {
+  border-width: 2px 2px 2px 1px !important;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+#toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#toolbar button {
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  transition: 0.3s;
+  padding: 0px;
+  height: 55px;
+  border-radius: 0px;
+  border-color: #000000;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#toolbar button:focus {
+  outline: none;
+}
+
+#generate {
+  flex: 50%;
+  background-color: #cce0ff;
+  color: #000000;
+  border-width: 2px 1px 0px 2px;
+}
+
+#generate:hover {
+  background-color: #0075ff;
+  color: #ffffff;
+}
+
+#copy {
+  width: 55px;
+  background-color: #eeeeee;
+  color: #000000;
+  border-width: 2px 1px 0px 1px;
+}
+
+#copy:hover {
+  background-color: #a6a6a6;
+  color: #ffffff;
+}
+
+#copy[disabled] {
+  background-color: #e1e1e1;
+  color: #808080;
+  cursor: not-allowed;
+}
+
+#copy[disabled]:hover {
+  background-color: #e1e1e1;
+  color: #808080;
+  cursor: not-allowed;
+}
+
+#configure {
+  width: 55px;
+  background-color: #eeeeee;
+  color: #000000;
+  border-width: 2px 2px 0px 1px;
+}
+
+#configure:hover {
+  background-color: #a6a6a6;
+  color: #ffffff;
+}
+
+#card {
+  font-size: 15px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: auto;
+  background-color: #eeeeee;
+  color: #000000;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+  transition: 0.3s ease-in-out;
+  user-select: none;
+}
+
+#card a {
+  transition: 0.3s;
+  text-decoration: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+#card a:first-of-type {
+  color: #0066ff;
+  background-color: #cce0ff;
+}
+
+#card a:last-of-type {
+  color: #000000;
+  background-color: transparent;
+}
+
+#card a:first-of-type:hover {
+  color: #000000;
+  background-color: #d3d3d3;
+}
+
+#card a:last-of-type:hover {
+  color: #000000;
+  background-color: #e6e6e6;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+#background {
+  z-index: 75;
+  background-color: #0075ff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+#popup {
+  z-index: 100;
+  overflow: auto;
+  padding: 20px;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+@media (max-width: 1099px) {
+  #popup {
+    position: fixed;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #popup {
+    position: fixed;
+    left: 200px;
+    right: 200px;
+    top: 50px;
+    bottom: 50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  #popup {
+    position: fixed;
+    width: 780px;
+    height: max-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#popup h1 {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+#popup h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 12px 0;
+  color: #000000;
+}
+
+#popup p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+}
+
+#popup input[type="text"] {
+  font-family: "Biotif", sans-serif;
+  padding: 7px 10px;
+  font-size: 12px;
+  border: 2px solid #000000;
+  border-radius: 7px;
+}
+
+#popup input[type="text"]:focus {
+  outline: none;
+}
+
+#popup input[type="range"] {
+  width: 175px;
+}
+
+#popup button {
+  padding: 7px 11px;
+  font-family: "Biotof", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  border: 2px solid #000000;
+  border-radius: 7px;
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+#popup button[disabled] {
+  background-color: gray;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#popup .primary, #popup button[selected] {
+  color: #ffffff;
+  background-color: #0075ff;
+}
+
+#popup button:focus {
+  outline: none;
+}
+
+#popup .buttons {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+#popup .buttons button {
+  padding: 12px 15px;
+}
+
+#popup label {
+  position: absolute;
+  padding: 0px 6px;
+  color: #000000;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#popup a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+#popup .container {
+  background-color: #cce0ff;
+  border: 2px solid #000000;
+  border-radius: 15px;
+  padding: 3px 20px;
+  margin: 18px 0px;
+}
+
+#popup .container:last-of-type {
+  margin-bottom: 0px;
+}
+
+#popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+#popup::-webkit-scrollbar-track {
+  margin: 20px 0px;
+  background-color: transparent;
+}
+
+#popup::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+#popup::-webkit-scrollbar-thumb:hover {
+  background: #212121;
+}
+
+.pad {
+  margin: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown-none {
+  display: block;
+}
+
+.shown {
+  display: block;
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  textarea {
+    flex: 100%;
+    height: 50%;
+  }
+
+  textarea:nth-child(1) {
+    border-width: 2px 2px 1px 2px !important;
+  }
+
+  textarea:nth-child(2) {
+    border-width: 1px 2px 2px 2px !important;
+  }
+
+  #card.shown {
+    display: none;
+  }
+  
+  #popup h1 span {
+    display: none;
+  }
+}
+
+::-moz-selection {
+  color: #000000;
+  background: #cce0ff;
+}
+
+::selection {
+  color: #000000;
+  background: #cce0ff;
+}
