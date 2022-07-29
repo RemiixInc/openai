@@ -36,7 +36,7 @@ async function generate() {
 
     const json = await (
       await fetch(
-        `https://rmx-grp-hub.glitch.me/ai?prompt=${prompt}${
+        `/api?prompt=${prompt}${
           key ? "&key=" + key : ""
         }&model=${model || "babbage"}&temperature=${
           temperature || 0.3
