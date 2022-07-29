@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Generate stories, essays and more with the power of AI." />
+    <title>OpenAI Text Generator</title>
+    <link
+      rel="icon"
+      href="https://emojicdn.elk.sh/%F0%9F%92%A1?style=apple"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ka-f.fontawesome.com/releases/v6.1.1/css/free.min.css">
+    <link rel="stylesheet" href="/font.css" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script async src="https://cdn.splitbee.io/sb.js"></script>
+    <script async src="https://arc.io/widget.min.js#5ymdzDyV"></script>
+  </head>
+  <body>
+    <div id="toolbar">
+      <button onclick="generate();" id="generate">Generate!</button>
+      <button onclick="copy();" id="copy" disabled><i class="fa-solid fa-copy"></i></button>
+      <button onclick="openConfig();" id="configure"><i class="fa-solid fa-sliders"></i></button>
+    </div>
+    <div id="form">
+      <textarea
+        id="input"
+        type="text"
+        maxlength="250"
+        placeholder="Write prompt here..."
+        autofocus
+      ></textarea>
+      <textarea
+        id="output"
+        type="text"
+        placeholder="Output will appear here..."
+        readonly
+      ></textarea>
+    </div>
+    <div id="card" class="hidden">
+      <b>We are paying for this website out of our own pockets, but we cannot
+      continue doing this forever.</b> Arc.io lets us make money from this website
+      without ads, so the best way you can support us is just to keep the tab
+      open in the background. Thanks!
+      <p>
+      </p>
+      <a href="javascript:closeCard()">Close</a>
+      <a href="javascript:hideCard()">Don't show this again</a>
+      <p class="pad"></p>
+    </div>
+    <div id="background" class="hidden" onclick="saveConfig()"></div>
+    <div id="popup" class="hidden">
+      <header>
+        <h1>Config<span>uration</span></h1>
+        <div class="buttons">
+          <button id="reset">
+            Reset
+          </button>
+          <button class="primary" onclick="saveConfig()" id="save">
+            Save
+          </button>
+        </div>
+      </header>
+      <div class="container" id="key">
+        <h3>
+          API Key
+        </h3>
+        <input type="text" id="keyInput">
+        <button class="primary" id="keyButton" onclick="setKey()">
+          Set
+        </button>
+        <p id="keytext">
+          Set a <a href="https://beta.openai.com/signup" target="_blank">custom API key</a> to unlock full access to all features (remove daily limit, choose better models, increase length).
+        </p>
+      </div>
+      <div class="container" id="model">
+        <h3>
+          AI Model
+        </h3>
+        <button onclick="select('ada')" id="ada">
+          Ada
+        </button>
+        <button onclick="select('babbage')" id="babbage" selected>
+          Babbage
+        </button>
+        <button onclick="select('curie')" id="curie" title="Add custom API key to enable." disabled>
+          Curie
+        </button>
+        <button onclick="select('davinci')" id="davinci" title="Add custom API key to enable." disabled>
+          Davinci
+        </button>
+        <p>
+          Ada is the fastest model, Davinci is the most powerful.
+        </p>
+      </div>
+      <div class="container" id="temperature">
+        <h3>
+          Temperature
+        </h3>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="30"
+          id="temperatureInput"
+          oninput="document.querySelector('#temperature label').innerText = (this.value / 100).toFixed(2);"
+        /><label id="temperatureLabel">0.3</label>
+        <p>
+          Higher temperature returns more random results, lower is more repetitive.
+        </p>
+      </div>
+      <div class="container" id="length">
+        <h3>
+          Length
+        </h3>
+        <input
+          type="range"
+          min="1"
+          max="40" 
+          value="40"
+          id="lengthInput"
+          oninput="document.querySelector('#length label').innerText = this.value * 5;"
+        /><label id="lengthLabel">200</label>
+        <p>
+          Sets the maximum length of the output (Max 2000 with custom API key).
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
