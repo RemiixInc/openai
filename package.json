@@ -2,9 +2,6 @@
   "name": "open-ai",
   "version": "1.0.0",
   "description": "Generate stories, essays and more with the power of AI.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "express": "^4.17.1",
     "openai": "^2.0.5"
