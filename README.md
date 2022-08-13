@@ -1,2 +1,2 @@
 # open-ai
-🧠 User friendly frontend for OpenAI.
+User friendly frontend for OpenAI.
