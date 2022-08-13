@@ -1,2 +1,2 @@
 # open-ai
-🧠 Generate stories, essays and more with the power of AI.
+🧠 User friendly frontend for OpenAI.
